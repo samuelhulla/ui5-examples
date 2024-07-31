@@ -1,0 +1,75 @@
+<mvc:View
+  controllerName="project1.controller.Detail"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns="sap.m"
+>
+  <Page id="detailPage">
+  		<customHeader>
+			<Bar>
+        <contentLeft>
+          <Button type="Back" press="onNavBack" />
+          <Title text="Product detail" />
+        </contentLeft>
+				<contentRight>
+					<Button id="edit" text="Edit" enabled="false" press="onEdit" />
+					<Button id="save" text="Save" type="Emphasized" visible="false" press="onSave" />
+					<Button id="cancel" text="Cancel" visible="false" press="onCancel" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+    <content>
+      <VBox id="detail">
+        <!-- Fragment inserted here by controller -->
+      </VBox>
+      <VBox class="sapUiSmallMargin">
+        <!-- Category Details -->
+        <Label text="Category Details" design="Bold" />
+        <Table id="categoryTable">
+          <columns>
+            <Column>
+                <Text text="Category ID" />
+            </Column>
+            <Column>
+                <Text text="Category Name" />
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{Category/ID}" />
+                    <Text text="{Category/Name}" />
+                </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+        <!-- Supplier Details -->
+        <Label text="Supplier Details" class="sapUiSmallMarginTop" design="Bold" />
+        <Table id="supplierTable">
+          <columns>
+              <Column>
+                  <Text text="Supplier ID" />
+              </Column>
+              <Column>
+                  <Text text="Supplier Name" />
+              </Column>
+              <Column>
+                  <Text text="Address" />
+              </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{Supplier/ID}" />
+                        <Text text="{Supplier/Name}" />
+                        <Text
+                  text="{Supplier/Address/Street}, {Supplier/Address/City}, {Supplier/Address/State}, {Supplier/Address/Country}"
+                />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

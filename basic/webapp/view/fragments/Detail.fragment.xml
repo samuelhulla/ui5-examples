@@ -1,0 +1,67 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+>
+  <VBox class="sapUiSmallMargin">
+    <f:Form editable="false" id="productForm">
+      <f:title>
+        <core:Title text="Product detail: {Name}" />
+      </f:title>
+      <f:layout>
+        <f:ResponsiveGridLayout
+          labelSpanXL="3"
+          labelSpanL="3"
+          labelSpanM="3"
+          labelSpanS="12"
+          adjustLabelSpan="false"
+          emptySpanXL="4"
+          emptySpanL="4"
+          emptySpanM="4"
+          emptySpanS="0"
+          columnsXL="1"
+          columnsL="1"
+          columnsM="1"
+          singleContainerFullSize="false"
+        />
+      </f:layout>
+      <f:formContainers>
+        <f:FormContainer>
+          <f:formElements>
+            <f:FormElement label="Name">
+              <f:fields>
+                <Text text="{Name}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="ID">
+              <f:fields>
+                <Text text="{ID}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Price">
+              <f:fields>
+                <Text text="{Price}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Rating">
+              <f:fields>
+                <Text text="{Rating}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Description">
+              <f:fields>
+                <Text text="{Description}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Release Date">
+              <f:fields>
+                <Text text="{ path: 'ReleaseDate', formatter: '.formatter.dateTime'  }" />
+              </f:fields>
+            </f:FormElement>
+          </f:formElements>
+        </f:FormContainer>
+      </f:formContainers>
+    </f:Form>
+  </VBox>
+</core:FragmentDefinition>

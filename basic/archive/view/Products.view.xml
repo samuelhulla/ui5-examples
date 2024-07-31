@@ -1,0 +1,56 @@
+<mvc:View
+  controllerName="project1.controller.Products"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns="sap.m"
+>
+    <Page id="page" title="Product Listing">
+    <customHeader>
+      <Bar>
+        <contentLeft>
+          <Title text="Product Listing" />
+        </contentLeft>
+        <contentRight>
+            <Button id="newProducts" press=".onDialogPress" type="Emphasized" text="+" />
+        </contentRight>
+      </Bar>
+    </customHeader>
+      <content>
+        <Table inset="false" items="{/Products}" noDataText="No products found" id="products">
+          <columns>
+            <Column id="productsColName">
+              <Text id="productsColNameValue" text="Product Name" />
+            </Column>
+            <Column id="productsColPrice">
+              <Text id="productsColPriceValue" text="Price" />
+            </Column>
+            <Column id="productsColRating">
+              <Text id="productsColRatingValue" text="Rating" />
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem
+            vAlign="Middle"
+            type="Navigation"
+            press=".onItemSelect"
+            id="productsRow"
+          >
+              <cells>
+                <ObjectIdentifier id="productsRowName" title="{Name}" />
+                <!-- technically not EUR, just OData doesnt provide one, added here for comsetic purposes 
+                     and testing different cell rendering methods
+                 -->
+                <ObjectNumber id="productsRowPrice" number="{Price}" unit="EUR" />
+                <!-- testing if template literals work -->
+                <ObjectStatus
+                id="productsRowRating"
+                state="{ path: 'Rating', formatter: '.formatter.ratingColor' }"
+                text="{ path: 'Rating', formatter: '.formatter.rating' }"
+              />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </content>
+    </Page>
+</mvc:View>

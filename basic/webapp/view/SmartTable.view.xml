@@ -1,0 +1,33 @@
+<mvc:View
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:sfb="sap.ui.comp.smartfilterbar"
+  xmlns:st="sap.ui.comp.smarttable"
+  controllerName="project1.controller.SmartTable"
+>
+  <VBox fitContainer="true">
+    <sfb:SmartFilterBar id="smartFilterBar" entitySet="Products">
+      <sfb:controlConfiguration>
+        <sfb:ControlConfiguration key="Price" visibleInAdvancedArea="true" />
+        <sfb:ControlConfiguration key="Rating" visibleInAdvancedArea="true" />
+      </sfb:controlConfiguration>
+      <sfb:layoutData>
+        <FlexItemData growFactor="1" />
+      </sfb:layoutData>
+    </sfb:SmartFilterBar>
+    <st:SmartTable
+      id="smartTable"
+      entitySet="Products"
+      smartFilterId="smartFilterBar"
+      tableType="Table"
+      enableAutoColumnWidth="true"
+      useTablePersonalisation="true"
+      header="Product information"
+      showRowCount="true"
+    >
+      <st:layoutData>
+        <FlexItemData growFactor="1" baseSize="0%" />
+      </st:layoutData>
+    </st:SmartTable>
+  </VBox>
+</mvc:View>

@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+  <Popover modal="true" verticalScrolling="false" contentMinWidth="20rem" contentHeight="25rem">
+    <customHeader>
+      <Bar>
+        <contentLeft>
+          <Button visible="false" id="errorBackButton" press="onErrorBack" />
+        </contentLeft>
+        <contentMiddle>
+          <Title text="Product creation errors" />
+        </contentMiddle>
+      </Bar>
+    </customHeader>
+    <content>
+      <MessageView
+        id="errorMessageView"
+        showDetailsPageHeader="false"
+        itemSelect="onErrorItemClick"
+      >
+      </MessageView>
+    </content>
+    <footer>
+      <Bar>
+        <contentRight>
+          <Button text="Close" press="closePopover" />
+        </contentRight>
+      </Bar>
+    </footer>
+  </Popover>
+</core:FragmentDefinition>

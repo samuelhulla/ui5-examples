@@ -1,0 +1,16 @@
+<Annotations Target="ODataDemo.Product">
+    <Annotation Term="UI.LineItem">
+        <Collection>
+            <Record Type="UI.DataField">
+                <PropertyValue Property="Value" Path="Name"/>
+            </Record>
+            <Record Type="UI.DataField">
+                <PropertyValue Property="Value" Path="{roce}"/>
+            </Record>
+            <Record Type="UI.DataField">
+                <PropertyValue Property="Label" String="Rating"/>
+                <PropertyValue Property="Value" Path="Rating"/>
+            </Record>
+        </Collection>
+    </Annotation>
+</Annotations>
